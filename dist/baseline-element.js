@@ -39,12 +39,12 @@
    * @param {Element} element
    * @param {int} baseline
    */
-  function baselineElement (element, baseline) {
+  function baselineElement (element, baseline, method = "cover") {
     if (!initialized) {
       initialize();
     }
     element.style.display = 'block';
-    element.style.objectFit = 'cover';
+    element.style.objectFit = method;
     element.style.width = '100%';
     var item = {
       aspectRatio: (element.offsetWidth / element.offsetHeight),
