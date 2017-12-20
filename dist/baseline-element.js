@@ -7,6 +7,15 @@
  * @author Slava Fomin II <s.fomin@betsol.ru>
  * @author Vladimir Gaintsev <gaintsev@gmail.com>
  */
+/**
+ * baseline-element - JavaScript library to fix responsive images in vertical rhythm environments
+ * @version v1.0.2
+ * @link https://github.com/betsol/baseline-element
+ * @license MIT
+ *
+ * @author Slava Fomin II <s.fomin@betsol.ru>
+ * @author Vladimir Gaintsev <gaintsev@gmail.com>
+ */
 (function (window, $) {
 
   'use strict';
@@ -39,9 +48,12 @@
    * @param {Element} element
    * @param {int} baseline
    */
-  function baselineElement (element, baseline, method = "cover") {
+  function baselineElement (element, baseline, method) {
     if (!initialized) {
       initialize();
+    }
+    if (method == undefined) {
+      method = "cover";
     }
     element.style.display = 'block';
     element.style.objectFit = method;

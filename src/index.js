@@ -30,9 +30,12 @@
    * @param {Element} element
    * @param {int} baseline
    */
-  function baselineElement (element, baseline, method = "cover") {
+  function baselineElement (element, baseline, method) {
     if (!initialized) {
       initialize();
+    }
+    if (method == undefined) {
+      method = "cover";
     }
     element.style.display = 'block';
     element.style.objectFit = method;
